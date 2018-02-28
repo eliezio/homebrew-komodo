@@ -1,0 +1,16 @@
+class MarketmakerCli < Formula
+  desc "MarketMaker (barterDEX) Command-Line Interface"
+  homepage "https://github.com/eliezio/marketmaker-cli"
+  url "https://github.com/eliezio/marketmaker-cli/releases/download/v@VERSION_SHORT@/marketmaker-cli-@VERSION_SHORT@-Darwin.tar.gz"
+  sha256 "@SHA256@"
+
+  bottle :unneeded
+
+  def install
+    bin.install "usr/local/bin/marketmaker-cli"
+  end
+
+  test do
+    system "#{bin}/marketmaker-cli", "--version"
+  end
+end
